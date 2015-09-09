@@ -1,4 +1,7 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 class Dice {
  public:
@@ -6,4 +9,4 @@ class Dice {
   int Roll();
  private:
    int size_;
-}
+};
