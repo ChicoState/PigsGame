@@ -14,6 +14,6 @@ int Computer::getScore() {
     return m_score;
 }
 
-int Computer::setScore(int score) {
+void Computer::setScore(int score) {
     m_score = score;
 }

@@ -5,11 +5,12 @@
 class Computer {
     public:
         Computer(int diff);
-        int turn();
+        bool turn();
         int getScore();
         void setScore(int score);
     private:
         int m_difficulty;
         int m_score;
-}
+};
 
+#endif
