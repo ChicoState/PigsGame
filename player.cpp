@@ -5,7 +5,6 @@ using namespace std;
 Player::Player()
 {
   m_score = 0;
-  //test
 }
 
 Player::update_score(int turn_score)
