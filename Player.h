@@ -4,8 +4,8 @@
 class Player
 {
 	public:
-		Jogador();
-		~Jogador();
+		Player();
+		~Player();
 		void updateScore(int value);
 	private:
 		int score;
