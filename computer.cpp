@@ -6,7 +6,7 @@ Computer::Computer(int diff)
 
 }
 
-bool Computer::turn() {
+bool Computer::turn(int num_dice, int round_score) {
     return true;
 }
 
