@@ -3,19 +3,19 @@
 
 #include "player.h"
 #include "computer.h"
-#include "die.h"
+#include "dice.h"
 
 class Game{
 
   public:
-    Game(int, int);
+    Game(int, int, string);
     ~Game();
   void run();
 
   private:
-    Player m_players[];
-    Computer m_computer;
-    Die m_die;
+    Player **m_players;
+    Computer *m_computer;
+    Dice *m_die;
     bool m_isPlayerTurn;
     bool m_gameWon;
     int m_roundScore;
