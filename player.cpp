@@ -6,11 +6,11 @@ Player::Player()
   m_score = 0;
 }
 
-bool Player::update_score(int turn_score)
+bool Player::update_score(Player &current_player, int turn_score)
 {
   m_score = m_score + turn_score;
 
-  if(m_score >= 100)
+  if(current_player.get_score() >= 100)
     return true;
   else
     return false;
