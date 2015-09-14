@@ -8,6 +8,7 @@ class Die
   public:
 
     int roll();  // returns a random number from 1-6
+    Die();  // Die ctor
 
 
   private:
