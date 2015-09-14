@@ -1,4 +1,3 @@
-
 #include "computer.h"
 
 Computer::Computer(int diff)
@@ -6,20 +5,21 @@ Computer::Computer(int diff)
 
 }
 
-bool Computer::turn(int num_dice, int round_score) {
-  double fraction = 0.83;
-  double check = 0.5;
-  
-  if (num_dice == 1) {
-        m_running_chance = fraction;
+bool Computer::turn(int turn_roll, int round_score) {
+    if (turn_roll == 1) {
+        m_running_chance = 5.0/6;
         return true;
     }
+
+    if (round_score + m_score >= 100) {
+        return false;
+    }
     
-    if (m_running_chance < check) {
+    if (m_running_chance < 0.5) {
         return false;
     }
     else {
-        m_running_chance = m_running_chance * fraction;
+        m_running_chance = m_running_chance * (5.0/6);
         return true;
     } 
 }
