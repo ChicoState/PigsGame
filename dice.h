@@ -1,3 +1,6 @@
+#ifndef DICE_H
+#define DICE_H
+
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,3 +13,4 @@ class Dice {
  private:
    int size_;
 };
+#endif //DICE_H

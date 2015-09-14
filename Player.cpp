@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "player.h"
 #include "dice.h" 
 
 #include<iostream>
@@ -7,7 +7,7 @@ using namespace std;
 
 Player::Player(string name)
 {
-  name=m_name; 
+  m_name=name; 
 }
 
 int Player::getScore()
@@ -17,7 +17,7 @@ int Player::getScore()
 
 void Player::setScore(int player_score)
 {
-  int player_score = m_score;
+  m_score = player_score;
 }
 
 string Player::getName()

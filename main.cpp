@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-#include<game.h>
+#include "game.h"
 
 using namespace std;
 int main()
@@ -8,7 +8,7 @@ int main()
   string name;
   int diceSides;
   cout<<"What is your name?"<<endl;  
-  cin>>name
+  cin>>name;
   cout<<"How many sides does this Die have?"<<endl;  
   cin>>diceSides;
 
