@@ -3,7 +3,6 @@
 
 using namespace std;
 
-<<<<<<< HEAD
 void Player::updateScore(int value)
 {
 	mScore += value;
@@ -12,9 +11,3 @@ void Player::updateScore(int value)
 int Player::getScore() {
 	return mScore;
 }
-=======
-void Player::updateScore(int value) 
-{
-	score += value;
-}
->>>>>>> origin/player
