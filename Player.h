@@ -9,17 +9,17 @@ using namespace std;
 class Player
 {
   public: 
-  player(int score, string name);
-  int total();
-  bool roll(int roll_num);
-  PlayerTurn(int TotalScore); 
+    Player(string name);
+    int getScore(); 
+    void setScore(int);
+    string getName();
 
 
 
 
   private: 
- int score; 
- string name; 
+    int m_score; 
+    string m_name; 
 
 
 
