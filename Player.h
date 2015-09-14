@@ -9,7 +9,7 @@ using namespace std;
 class Player
 {
   public: 
-  player(int score, int name);
+  player(int score, string name);
   int total();
   bool roll(int roll_num);
   PlayerTurn(int TotalScore); 
