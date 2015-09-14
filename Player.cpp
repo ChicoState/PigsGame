@@ -1,50 +1,26 @@
 #include "Player.h"
-#include "dice.h" 
+//#include "dice.h" 
 
 #include<iostream>
 
 using namespace std; 
 
-Player::Player(int m_score, m_string name)
+Player::Player(string name)
 {
-score=m_score; 
-name=m_string; 
+  name=m_name; 
 }
 
-bool Player::roll()
+int Player::getScore()
 {
-  return true; 
+  return m_score; 
 }
 
-int Player::PlayerTurn(int TotalScore)
+void Player::setScore(int)
 {
-  int all_score=0; 
-  int score=0;
-  string roll;
-
-  //if the player decide to roll
-  cout << "Do you want to roll or hold? Choose R(Roll) or H(Hold) "<< endl;
-  cin >> roll; 
-
-  while(roll == 'R')
-  {
-    score = Dice::Roll(); //roll a dice for this turn; 
-    if (score == 1)
-    {
-      cout << "I am sorry, you just rolled a 1"<< endl; 
-      //roll a 1, stop, break
-      break; 
-    }
-    return all_score=all_score+score; 
-
-  }
-
-  return TotalScore; 
-
+  int score = m_score;
 }
 
-
-int Player::total()
+string Player::getName()
 {
-  return score;
+return m_name;
 }
