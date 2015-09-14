@@ -17,7 +17,7 @@ int Player::getScore()
 
 void Player::setScore(int player_score)
 {
-  int score = m_score;
+  int player_score = m_score;
 }
 
 string Player::getName()
