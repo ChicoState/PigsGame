@@ -1,5 +1,5 @@
 #include "Player.h"
-//#include "dice.h" 
+#include "dice.h" 
 
 #include<iostream>
 
