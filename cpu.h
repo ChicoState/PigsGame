@@ -6,8 +6,7 @@ class CPU : protected Player  {
 
   public:
     CPU(int sides) {  Player(sides);  }
-    virtual bool roll() = 0;
-  private:
+    virtual int Roll() = 0;
   
 };
 #endif
