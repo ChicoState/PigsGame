@@ -11,6 +11,7 @@ class Computer {
     private:
         int m_difficulty;
         int m_score;
+        double m_running_chance;
 };
 
 #endif
