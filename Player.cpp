@@ -3,7 +3,11 @@
 
 using namespace std;
 
-void Player::updateScore(int value) 
+void Player::updateScore(int value)
 {
-	score += value;
+	mScore += value;
+}
+
+int Player::getScore() {
+	return mScore;
 }

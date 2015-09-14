@@ -5,10 +5,10 @@ class Player
 {
 	public:
 		Player();
-		~Player();
 		void updateScore(int value);
+		int getScore();
 	private:
-		int score;
+		int mScore;
 };
 
 #endif // PLAYER_H_INCLUDED
