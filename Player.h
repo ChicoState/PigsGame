@@ -11,7 +11,7 @@ class Player
   public: 
     Player(string name);
     int getScore(); 
-    void setScore(int);
+    void setScore(int player_score);
     string getName();
 
 
