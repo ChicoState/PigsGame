@@ -5,7 +5,7 @@
 class Computer {
     public:
         Computer(int diff);
-        bool turn(int num_dice, int round_score);
+        bool turn(int turn_roll, int round_score);
         int getScore();
         void setScore(int score);
     private:

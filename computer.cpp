@@ -6,17 +6,21 @@ Computer::Computer(int diff)
 
 }
 
-bool Computer::turn(int num_dice, int round_score) {
-    if (round_score == 0) {
+bool Computer::turn(int turn_roll, int round_score) {
+    if (turn_roll == 1) {
         m_running_chance = 5/6;
         return true;
+    }
+
+    if (round_score + m_score >= 100) {
+        return false;
     }
     
     if (m_running_chance < 1/2) {
         return false;
     }
     else {
-        m_running_chance = m_running_chance * 5/6;
+        m_running_chance = m_running_chance * (5/6);
         return true;
     }
 }
