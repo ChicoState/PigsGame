@@ -11,6 +11,10 @@ Player::~Player() {
 	delete dice;
 }
 
+bool Player::is_player() {
+	return true;
+}
+
 int Player::GetTotalScore() {
 	return total_score;
 }

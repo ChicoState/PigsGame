@@ -8,6 +8,7 @@ class Player {
 	public:
 		Player(int Sides);
 		~Player();
+		bool is_player();
 		int GetTotalScore();
 		int GetTurnScore();
 		int Roll();
