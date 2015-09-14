@@ -4,20 +4,37 @@
 
 using namespace std;
 
-void Player:Player()
+void Player:Player(int Score)
 {
-
+	Score = TotalScore;
 }
 
 void Player:ResetTurnScore()
 {
 
 }
-void Player:CheckForContinue()
+bool Player:CheckForContinue()
 {
-
+	string YesOrNo;
+	cout << "Roll Again? (y/n)" << endl;
+	while()
+	{
+		cin >> YesOrNo;
+		if ( cin == "y")
+		{	
+			return true;
+		}
+		else if(cin == "n")
+		{
+			return false;
+		}
+		else
+		{
+			cout << "Please type a y or n"
+		}
+	}
 }
 void Player:ReturnTotalScore()
 {
-
+	
 }
