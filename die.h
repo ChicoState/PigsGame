@@ -6,6 +6,7 @@
 class Die
 {
     public:
+        Die();
         int roll();
 };
 
