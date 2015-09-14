@@ -9,7 +9,7 @@ Dice::Dice(int size) {
 }
 
 int Dice::Roll() {
-  int diceValue = rand() % size_ + 1;
+  int diceValue = (rand() % size_)++;
   return diceValue;
 }
 
