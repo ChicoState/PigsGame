@@ -2,7 +2,7 @@
 
 int CPU::Roll()  {
   int roll_num = Player::Roll():
-  if(roll_num >= dice->get_sides()/2)
+  if(roll_num <= dice->get_sides()/2)
 	Roll();
   EndTurn();
   return total_score;
