@@ -11,10 +11,15 @@ class Player
   public: 
   player(int score, int name);
   int total();
+  bool roll(int roll_num);
+  PlayerTurn(int TotalScore); 
+
+
 
 
   private: 
-  
+ int score; 
+ string name; 
 
 
 
