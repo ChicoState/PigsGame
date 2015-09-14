@@ -15,7 +15,7 @@ int Player::getScore()
   return m_score; 
 }
 
-void Player::setScore(int)
+void Player::setScore(int player_score)
 {
   int score = m_score;
 }
