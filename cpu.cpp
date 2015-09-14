@@ -7,3 +7,5 @@ int CPU::Roll()  {
   EndTurn();
   return total_score;
 }
+
+bool CPU::is_player()  {    return false;    }
