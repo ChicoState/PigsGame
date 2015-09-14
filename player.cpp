@@ -31,7 +31,7 @@ int Player::Roll() {
 	return roll;
 }
 
-void EndTurn() {
+void Player::EndTurn() {
 	total_score += turn_score;
 	turn_score = 0;
 }

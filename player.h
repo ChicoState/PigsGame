@@ -10,7 +10,7 @@ class Player {
 		~Player();
 		int GetTotalScore();
 		int GetTurnScore();
-		int Roll(int MaxRoll);
+		int Roll();
 		void EndTurn();
 	private:
 		int total_score,
