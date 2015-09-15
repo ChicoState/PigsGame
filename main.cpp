@@ -40,16 +40,16 @@ int main()
 
   string state = "roll"; 
 
-  for( int i = 0; state != "win"; i = (i+1)%(numPlayers+numCpu+1))
+  cout << "<<<<<<<<<<<<<<<<<<<< Start Game! >>>>>>>>>>>>>>>>>>>>" << endl;
+  for( int i = 0; state != "win"; i = (i+1)%(numPlayers+numCpu))
   {
     state = "roll";
 
     while( state == "roll")
     {
       state = players[i]->decision(diceRoll->roll());
-
     }
-
+    cout << endl << "<<<<<<<<<<<<<<< Next Player >>>>>>>>>>>>>>>" << endl;
   } 
 
   for(unsigned int i = 0; i < players.size(); ++i)
