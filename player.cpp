@@ -1,20 +1,47 @@
 #include "player.h"
 #include <iostream>
-
+#include "player.h"
 using namespace std;
 
-void addTurnScore(int turnScore){
+Player p1;
 
+void Player::sumScore(int turnScore){
+	totalScore = totalScore + turnScore;
 }
 
-void printScore(){
-
+void Player::printScore(){
+	cout << "Your score is: " << totalScore << endl;
 }
 
-void checkScore(){
-
+bool Player::gameOver(){
+	if(totalScore >= 100){
+		cout << "Game over, Player wins!" << endl;
+		return true;
+	}
+	return false;
 }
 
-void gameOver(){
-
+void Player::turn(){
+	d.turnScore = 0;
+	string x;	
+	int roll, runningTotal;
+	cout << "Roll or hold?" << endl;
+	cin >> x;
+	while(x!="hold"){
+		if(x == "roll"){
+			d.roll();
+			roll = d.roll();
+			cout << "You rolled: " << roll << endl;
+			runningTotal = totalScore + d.addToTurnScore(0);
+			cout << "Your running total score is: " << runningTotal << endl;
+			cout << "Roll or hold?" << endl;
+		}
+		if(x!="hold" && x!= "roll"){
+			cout << "Invalid input. Enter 'roll' or 'hold'.";
+		}		
+		cin >> x;
+	}
+	int score = d.hold();
+	p1.sumScore(score);
+	cout << "Your total score is: " << totalScore << ", your turn is now over." << endl;
 }

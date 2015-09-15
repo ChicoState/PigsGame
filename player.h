@@ -1,17 +1,16 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include<iostream>
-
-using namespace std;
+#include "dice.h"
 
 class Player{
-public:
-	void addTurnScore(int turnScore);
-	void printScore();
-	void checkScore();
-	void gameOver();
-private:
-	int totalScore;
+	public:
+		void sumScore(int turnScore);
+		void printScore();
+		bool gameOver();
+		void turn();
+		int totalScore;
+	private:
+		Dice d;
 };
 
 #endif

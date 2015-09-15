@@ -1,17 +1,16 @@
 #ifndef DICE_H
 #define DICE_H
-#include<iostream>
-
-using namespace std;
 
 class Dice{
-public:
-	void roll();
-	int hold();
-	void clearTurnScore();
-	void addToTurnScore(int roll);
-rivate:
-	int turnScore;
+	public:
+		int roll();
+		int hold();
+		void clearTurnScore();
+		int addToTurnScore(int roll);
+		int turnScore;
+		void rolledOne();
+	private:
+		
 };
 
 #endif
