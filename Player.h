@@ -4,7 +4,9 @@ using namespace std;
 #ifndef PLAYER_H
 #define PLAYER_H
 
-
+//The player class  handles both humans and computer players. When calling
+//the consturctior  one must provide a name and if the player is a cpu or not. A
+//true input for the bool in the constructor means it is a CPU.
 class Player 
 {
   public:

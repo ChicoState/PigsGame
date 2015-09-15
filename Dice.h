@@ -8,6 +8,9 @@
 
 using namespace std;
 
+//This class creates the random dice roll that will be
+//used by all players; this includes human and computer
+//players.
 class Dice
 {
   public:

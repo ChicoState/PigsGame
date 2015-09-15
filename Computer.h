@@ -2,7 +2,7 @@
 #ifndef COMPUTER_H
 #define COMPUTER_H
 
-
+//This class controls computer players decision making process.
 class Computer
 {
 	private:
