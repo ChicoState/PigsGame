@@ -107,3 +107,8 @@ int Game::turnScore(int r)
     m_pre_roll = r;
     return m_current_score += r;
 }
+
+void Game::start()
+{
+    
+}

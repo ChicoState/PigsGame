@@ -21,6 +21,7 @@ class Game
     bool holdOrRoll();
     void hold();
     int turnScore(int r);
+    void start();
 
   private:
     vector<Player*> m_players;
