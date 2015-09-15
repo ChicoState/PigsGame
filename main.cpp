@@ -7,52 +7,34 @@ using namespace std;
 int main()
 {
   dice *firstDice = new dice;
-  int coinFlip, temp, currentPlayer;
-  bool winner = false;
-
 
   cout << "It is time to play Pigs Game!\n";
-  cout << "Choose Heads(1) or Tails(2) to see who goes first\n";
-  cin >> coinFlip;
 
-  temp = firstDice->roll();
+  Player *player1 = new Player("Natalie", false);
+  Player *player2 = new Player("Chris", false);
 
-  if(temp > 3 && coinFlip == 2)
-  {
-	  cout << "You won the coin toss!\n";
-	  currentPlayer = 1;
-  }
-  else if (temp < 4 && coinFlip == 1)
-  {
-	  cout << "You won the coin toss!\n";
-	  currentPlayer = 1;
-  }
-  else
-  {
-	  cout << "The computer won the coin toss!\n";
-	  currentPlayer = 0;
-  }
-
-  while (!winner)
-  {
-	  if (currentPlayer == 0)
-	  {
-
-	  }
-	  else
-	  {
-
-	  }
-
-  }
-
+  Player *array[2];
+  array[0] = player1;
+  array[1] = player2;
   
+  string state = "roll";
+
+  for(int i = 0;  state != "win"; i = (i+1)%2)
+  {
+    state = "roll";
+    while(state == "roll")
+    {
+      state =  array[i]->decision(firstDice->roll());
+    }
+  }
 
   //cout << firstDice->roll() << endl;
 
 
   //Cleanup
   delete firstDice;
+  delete player1;
+  delete player2;
 
   return 0;
 }

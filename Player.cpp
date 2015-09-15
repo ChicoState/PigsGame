@@ -2,6 +2,8 @@
 #include <iostream>
 #include "Player.h"
 
+using namespace std;
+
 Player::Player(string new_name, bool new_cpu)
 {
   total   = 0;
@@ -10,7 +12,7 @@ Player::Player(string new_name, bool new_cpu)
   name    = new_name;
 }
 
-int Player::decision(int amount)
+string Player::decision(int amount)
 {
   string decision;
 
@@ -56,6 +58,7 @@ int Player::decision(int amount)
     cout << "Current total = "<<current << endl;
     cout << "Game total = "<<total+current << endl;
   }
+  return decision;
 }
 
 int Player::update(std::string decision, int amount)
