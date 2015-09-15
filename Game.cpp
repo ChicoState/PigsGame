@@ -55,7 +55,6 @@ void Game::hold()
    m_players[m_current_player-1]->updateScore(m_current_score);
    return;
   }
-    return m_cpus[m_current_player - m_number_of_players - 1]->updateScore(m_current_score);
 }
 
 //tells the AI player thats currently playing which roll their on, so it can decide wether to hold or roll, returns true if it wants to roll.
