@@ -16,6 +16,7 @@ class Game
     bool turnChange();
     void addPlayers(int n);
     void addCpus(int n);
+    int getCurrentPlayerScore();
     void setCurrentPlayerScore(int s);
     bool holdOrRoll();
     void hold();
