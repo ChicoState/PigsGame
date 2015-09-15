@@ -69,7 +69,7 @@ void Game::addCPUs(int n)
   m_number_of_cpus = n;
   for(i=0; i <m_number_players; i++)
   {
-    m_cpus.pushback(new CPU_Player());
+    m_cpus.pushback(new CpuPlayer());
   }
 }
 
