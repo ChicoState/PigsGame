@@ -10,7 +10,6 @@ class Player
     int total;
     int current;
     bool cpu;
-    int level;
 
   public:
     int update(std::string decision, int amount);

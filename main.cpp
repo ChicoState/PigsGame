@@ -1,13 +1,12 @@
 #include <iostream>
+#include "Player.h"
 #include "dice.h"
-#include "Computer.h"
 
 using namespace std;
 
 int main()
 {
   dice *firstDice = new dice;
-  Computer *comp = new Computer;
   int coinFlip, temp, currentPlayer;
   bool winner = false;
 
@@ -53,7 +52,6 @@ int main()
 
 
   //Cleanup
-  delete comp;
   delete firstDice;
 
   return 0;
