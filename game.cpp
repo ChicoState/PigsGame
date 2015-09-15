@@ -1,4 +1,4 @@
-#include "game.h"
+#include "Game.h"
 using namespace std;
 
 Game::Game()
@@ -19,8 +19,8 @@ int whosTurn()
 
 //gets what the current players score is
 int getCurrentPlayerScore()
-{ 
-  if(m_current_player <= m_number_of_players) 
+{
+  if(m_current_player <= m_number_of_players)
   {
     return m_players[current_player-1]->getScore();
   }
@@ -72,7 +72,7 @@ void addComps(int n)
 //sends the current turn score to the player so they can add it to their total, then switches player who is taking their turn
 void hold()
 {
-  if(m_current_player <= m_number_of_players) 
+  if(m_current_player <= m_number_of_players)
   {
    m_players[current_player-1]->setScore(m_current_score);
    return;
@@ -100,4 +100,4 @@ int turnScore(int r)
   }
     m_turn += 1;
     return m_current_score += r;
-} 
+}

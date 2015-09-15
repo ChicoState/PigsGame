@@ -1,6 +1,7 @@
-#include "player.h"
 #ifndef GAME_H
 #define GAME_H
+
+#include "Player.h"
 
 class Game
 {
@@ -15,7 +16,7 @@ class Game
     bool holdOrRoll();
     void hold();
     int turnScore(int r);
-    
+
   private:
     vector<Player*> m_players;
     vector<Comp*> m_comps;

@@ -1,7 +1,7 @@
 #include <stdlib.h> // for rand()
 #include <time.h>
 
-#include "die.h"
+#include "Die.h"
 
 Die::Die()
 {
