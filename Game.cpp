@@ -67,9 +67,9 @@ void Game::addPlayers(int n)
 void Game::addCpus(int n)
 {
   m_number_of_cpus = n;
-  for(int i=0; i <m_number_of_players; i++)
+  for(int i=0; i < m_number_of_cpus; i++)
   {
-    m_cpus.push_back(new CpuPlayer());
+    m_players.push_back(new CpuPlayer());
   }
 }
 
@@ -110,5 +110,5 @@ int Game::turnScore(int r)
 
 void Game::start()
 {
-    
+
 }
