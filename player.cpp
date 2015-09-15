@@ -17,12 +17,13 @@ void Player::endTurn(int roll)
 	if(roll == 0)
 	{
 	//Hold
-		score = turn_total + score;	
+		score = turn_total + score;
+		turn_total = 0;
 		if(score >= 100)
 		{
 			did_win = true;
 		}
-	}	
+	}
 	else
 	{
 	//Rolled a 1
@@ -35,4 +36,4 @@ void Player::increaseTurnTotal(int roll)
 {
 	turn_total = turn_total + roll;
 	return;
-}	
+}

@@ -10,7 +10,7 @@ class Player
 		int turn_total;
 		bool hold;
 		void endTurn(int roll);
-		void increase_turnTotal(int roll);
+		void increaseTurnTotal(int roll);
 		bool did_win;
 };
 
