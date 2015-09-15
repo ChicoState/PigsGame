@@ -27,25 +27,6 @@ int Game::getCurrentPlayerScore()
     return m_players[m_current_player-1]->getScore();
 }
 
-//changes which player is taking their turn
-bool Game::turnChange()
-{
-  m_turn = 0;
-  if(m_number_of_players == 0)
-  {
-    return false;
-  }
-  if( m_current_player < (m_number_of_players + m_number_of_cpus))
-  {
-    m_current_player = m_current_player+1;
-  }
-  else
-  {
-    m_current_player = 1;
-  }
-  return true;
-}
-
 //takes a number as an argument then adds that number of human players to the game
 void Game::addPlayers(int n)
 {
