@@ -8,7 +8,7 @@ Game::Game()
 {
   m_turn = 0;
   m_pre_roll = 0;
-  m_currentPlayer = 1;
+  m_current_player = 1;
 }
 
 //returns which players is currently playing
@@ -42,7 +42,7 @@ bool Game::turnChange()
   {
     return false;
   }
-  if( m_current_player < (m_number_of_players + m_num_of_cpus))
+  if( m_current_player < (m_number_of_players + m_number_of_cpus))
   {
     m_current_player = m_current_player+1;
   }
@@ -56,20 +56,20 @@ bool Game::turnChange()
 //takes a number as an argument then adds that number of human players to the game
 void Game::addPlayers(int n)
 {
-  m_number_of_Players = n;
-  for(i=0; i <m_number_players; i++)
+  m_number_of_players = n;
+  for(int i=0; i < m_number_of_players; i++)
   {
-    m_players.pushback(new Player());
+    m_players.push_back(new Player());
   }
 }
 
 //takes a number as an argument and adds that number of computer players to the game
-void Game::addCPUs(int n)
+void Game::addCpus(int n)
 {
   m_number_of_cpus = n;
-  for(i=0; i <m_number_players; i++)
+  for(int i=0; i <m_number_of_players; i++)
   {
-    m_cpus.pushback(new CpuPlayer());
+    m_cpus.push_back(new CpuPlayer());
   }
 }
 
@@ -78,10 +78,10 @@ void Game::hold()
 {
   if(m_current_player <= m_number_of_players)
   {
-   m_players[current_player-1]->updateScore(m_current_score);
+   m_players[m_current_player-1]->updateScore(m_current_score);
    return;
   }
-    return m_cpus[current_player - m_number_of_players - 1]->updateScore(m_current_score);
+    return m_cpus[m_current_player - m_number_of_players - 1]->updateScore(m_current_score);
 }
 
 //tells the AI player thats currently playing which roll their on, so it can decide wether to hold or roll, returns true if it wants to roll.
@@ -91,7 +91,7 @@ bool Game::holdOrRoll()
   {
     return false;
   }
-  return m_cpus[current_player - m_number_of_players - 1]->determine_hold(m_pre_roll,m_current_score,m_turn);
+  return m_cpus[m_current_player - m_number_of_players - 1]->determine_hold(m_pre_roll,m_current_score,m_turn);
 }
 
 //takes an number for what the dice was rolled. If number is 1, then player looses their turn score. Otherwise roll is added to total

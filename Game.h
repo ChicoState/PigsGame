@@ -28,7 +28,7 @@ class Game
     int m_pre_roll;
     int m_current_score;
     int m_number_of_players;
-    int m_numnber_of_cpus;
+    int m_number_of_cpus;
     int m_current_player;
 };
 
