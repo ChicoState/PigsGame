@@ -1,5 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
+#include <vector>
+using namespace std;
 
 #include "Player.h"
 
