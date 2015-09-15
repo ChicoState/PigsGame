@@ -33,17 +33,17 @@ string Player::decision(int amount)
   cout << name << ":" << endl;
   cout << "A "<<amount<< " was rolled" << endl;
 
-  if((amount + total + current) >= 100) //Determine if there is a winner.
-  {
-    decision = "win";
-    update(decision, amount);
-    cout << "WIN with " << total << endl;
-  }
-  else if(amount == 1) //Determine if the player scored nothing this round.
+  if(amount == 1) //Determine if the player scored nothing this round.
   {
     decision = "reset";
     update(decision, amount);
     cout << "You lost your turn, total = " << total << endl;
+  }
+  else if((amount + total + current) >= 100) //Determine if there is a winner.
+  {
+    decision = "win";
+    update(decision, amount);
+    cout << "WIN with " << total << endl;
   }
   else if(cpu == false) //If it the current player is not a computer we must ask what they want to do.
   {
