@@ -52,21 +52,35 @@ int main()
           cout << "Your turn score is:\n" << curPlayer->GetTurnScore() << "\n";
           cout << "______________________________________________\n";
           cout << "What do you want to do?\n";
-          cout << "(1) Roll\n (2) Hold\n"
+          cout << "(1) Roll\n (2) Hold\n";
           cout << "______________________________________________\n";
           cin >> choice;
         }
       }
       curPlayer.EndTurn()
-      cout << name << "'s total score is:\n Total Score: " << curPlayer->GetTotalScore() << "\n";
-      cout << "______________________________________________\n";
+      cout << name << "'s total score is:\n Total Score: " << curPlayer->GetTotalScore() << "\n"
+           << "______________________________________________\n";
       curPlayer = computer;
     }
     else
     {
       curPlayer->Roll(); 
+      cout << "Computer's total score is:\n Total Score: " << curPlayer->GetTotalScore() << "\n"
+           << "______________________________________________\n";
       curPlayer = player;
     }
   }
+  if(player->GetTotalScore() >= 100)
+  {
+    cout << "Congradulations "<< name << "!!!\n You won.\n";
+  }
+  else
+  {
+    cout << "Sorry... You lose. \n";
+  }
+  cout << name << "'s final score is: " << player->GetTotalScore() << "\n"
+       << "Computer's final score is: " << computer->GetTotalScore() << "\n"
+       << "______________________________________________\n";
+      
   return 0;
 }
