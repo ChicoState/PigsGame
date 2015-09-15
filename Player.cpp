@@ -1,3 +1,4 @@
+#include <string>
 #include <iostream>
 #include "Player.h"
 
@@ -9,7 +10,7 @@ Player::Player()
   level = 1;
 }
 
-int Player::update(string decision, int amount)
+int Player::update(std::string decision, int amount)
 {
   if (decision == "reset")
   {
@@ -29,3 +30,9 @@ int Player::update(string decision, int amount)
   return total;
 }
 
+//Not Sure what you want returned
+int Player::getScore()
+{
+	return current;
+	//return total;
+}
