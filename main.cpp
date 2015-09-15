@@ -1,23 +1,23 @@
 /****************************************************************\
-*					        The Pig Game								 *
-*						 Brought to you by:							 *
-*						Christian Cleveland							 *
-*						   Natalie Astorga								 *
-*						    Crystal Vang								 *
-*					     Michelle Rodriguez							 *
-*						   Matthew Daras								 *
-\****************************************************************/
+ *					        The Pigs Game								 *
+ *						 Brought to you by:							 *
+ *						Christian Cleveland							 *
+ *						   Natalie Astorga								 *
+ *						    Crystal Vang								 *
+ *					     Michelle Rodriguez							 *
+ *						   Matthew Daras								 *
+ \****************************************************************/
 
-/*The Pig Game 
+/*The Pigs Game 
 
-This is a command-line implementation of the Pig Game. 
+  This is a command-line implementation of the Pigs Game. 
 
-The rules of the game as explaned on Wikipedia are:
-Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
-If the player rolls a 1, they score nothing and it becomes the next player's turn. If the player rolls 
-any other number, it is added to their turn total and the player's turn continues. If a player chooses to 
-"hold", their turn total is added to their score, and it becomes the next player's turn. The first player to 
-score 100 or more points wins.
+  The rules of the game as explaned on Wikipedia are:
+  Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
+  If the player rolls a 1, they score nothing and it becomes the next player's turn. If the player rolls 
+  any other number, it is added to their turn total and the player's turn continues. If a player chooses to 
+  "hold", their turn total is added to their score, and it becomes the next player's turn. The first player to 
+  score 100 or more points wins.
 */
 
 #include <iostream>
@@ -38,58 +38,58 @@ using namespace std;
 //application ends but prior to exit the memory is freed.
 int main()
 { 
-	//Find out how many human players there are.
-	int numPlayers;
-	cout << " How many human players? " << endl;
-	cin >> numPlayers;
+  //Find out how many human players there are.
+  int numPlayers;
+  cout << "How many human players?" << endl;
+  cin >> numPlayers;
 
-	//Find out how many computer players there are.
-	int numCpu;
-	cout << " How many cpu players? " << endl;
-	cin >> numCpu;
+  //Find out how many computer players there are.
+  int numCpu;
+  cout << "How many cpu players?" << endl;
+  cin >> numCpu;
 
-	vector<Player*> players; // creating vector for players
-	string player_name;
-	string temp; 
+  vector<Player*> players; // creating vector for players
+  string playerName;
+  string cpuName; 
 
-	//This allows the user to name each of the human players ; once named
-	//they are added to our players vector.
-	for(int k=0; k<numPlayers; k++)
-	{
-		cout << " Please enter player " <<k<<"'s name? " << endl;
-		cin >> player_name;  
-		players.push_back(new Player(player_name, false));
-	}
+  //This allows the user to name each of the human players ; once named
+  //they are added to our players vector.
+  for(int k = 0; k < numPlayers; k++)
+  {
+    cout << "Please enter player " << k << "'s name? " << endl;
+    cin >> playerName;  
+    players.push_back(new Player(playerName, false));
+  }
 
-	//Each computer player is added to the players vector with a auto 
-	//created name that is based on the current computer player number.
-	for(int j=0; j<numCpu; j++)
-	{
-		temp="Cpu" + j;
-		players.push_back(new Player (temp, true));
-	}
+  //Each computer player is added to the players vector with a auto 
+  //created name that is based on the current computer player number.
+  for(int j = 0; j < numCpu; j++)
+  {
+    cpuName = ("Cpu" + j);
+    players.push_back(new Player (cpuName, true));
+  }
 
-	//Create the random dice that will provide a random roll.
-	Dice *diceRoll = new Dice; 
+  //Create the random dice that will provide a random roll.
+  Dice *dice = new Dice; 
 
-	//default the starting state as a "rolling" action.
-	string state = "roll";  
+  //default the starting state as a "rolling" action.
+  string state = "roll";  
 
-	//Inform the users the game has begun.
-	cout << "<<<<<<<<<<<<<<<<<<<< Start Game! >>>>>>>>>>>>>>>>>>>>" << endl;
+  //Inform the users the game has begun.
+  cout << "<<<<<<<<<<<<<<<<<<<< Start Game! >>>>>>>>>>>>>>>>>>>>" << endl;
 
-	//While there is no winner we cycle though all players allowing each of them to complete their turn
-	//untill a winner is declared.
-	for( int i = 0; state != "win"; i = (i+1)%(numPlayers+numCpu))
-	{
-		//must always start as a "rolling" state for each player
-		state = "roll"; 
+  //While there is no winner we cycle though all players allowing each of them to complete their turn
+  //untill a winner is declared.
+  for( int i = 0; state != "win"; i = (i+1)%(numPlayers+numCpu))
+  {
+    //must always start as a "rolling" state for each player
+    state = "roll"; 
 
-		//While the current player is rolling we do not move onto the next player.
-		while( state == "roll")
-		{
-			state = players[i]->decision(diceRoll->roll());
-		}
+    //While the current player is rolling we do not move onto the next player.
+    while( state == "roll")
+    {
+      state = players[i]->decision(dice->roll());
+    }
 
     if (state != "win")
     {
@@ -99,16 +99,16 @@ int main()
     {
 	     cout << "<<<<<<<<<<<<<<<<<<<< End Game! >>>>>>>>>>>>>>>>>>>>" << endl;
     }
-	} 
+  } 
 
-	//Delete all the created player classes to free memory upon exit.
-	for(unsigned int i = 0; i < players.size(); ++i)
-	{
-		delete players[i];
-	}
+  //Delete all the created player classes to free memory upon exit.
+  for(unsigned int i = 0; i < players.size(); ++i)
+  {
+    delete players[i];
+  }
 
-	//Delete the dice class to free memory on exit.
-	delete diceRoll;
+  //Delete the dice class to free memory on exit.
+  delete dice;
 
-	return 0;
+  return 0;
 }

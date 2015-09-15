@@ -1,8 +1,8 @@
 CXX = g++
 CXXFLAGS = -c -g -std=c++11 -Wall -W -Werror -pedantic
 
-PigGame : Player.o Dice.o main.o
-	$(CXX) $(LDFLAGS) -o PigGame Player.o Dice.o main.o
+PigsGame : Player.o Dice.o main.o
+	$(CXX) $(LDFLAGS) -o PigsGame Player.o Dice.o main.o
 
 main.o : main.cpp Dice.h Player.h
 	$(CXX) $(CXXFLAGS) main.cpp
