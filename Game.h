@@ -24,7 +24,7 @@ class Game
 
   private:
     vector<Player*> m_players;
-    vector<Comp*> m_cpus;
+    vector<CpuPlayer*> m_cpus;
     int m_turn;
     int m_pre_roll;
     int m_current_score;
