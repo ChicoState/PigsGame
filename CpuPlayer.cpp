@@ -11,3 +11,8 @@ bool CpuPlayer::determine_hold(int prev_roll, int cur_score, int roll_num)
  	IO.command(COM_HOLD);
  }
 }
+
+bool turn()
+{
+    return true;
+}

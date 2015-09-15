@@ -3,6 +3,12 @@
 
 using namespace std;
 
+bool turn()
+{
+	return true;
+}
+
+
 void Player::updateScore(int value)
 {
 	mScore += value;

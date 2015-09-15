@@ -7,6 +7,7 @@ class Player
 		Player();
 		void updateScore(int value);
 		int getScore();
+		virtual bool turn();
 	private:
 		int mScore;
 };
