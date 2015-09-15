@@ -32,8 +32,12 @@ void  Menu::printStart(){
 
 }
 //void  Menu::printScore();
-//void  Menu::printWin();
-//void  Menu::printLose();
+void  Menu::printWin(){
+  cout << "Congratulations, you have defeated the most difficult AI on this world.\n";
+}
+void  Menu::printLose(){
+
+}
 void  Menu::quit(){
   exit(0);
 }
