@@ -47,10 +47,16 @@ string Player::decision(int amount)
   }
   else if(cpu == false) //If it the current player is not a computer we must ask what they want to do.
   {
-    cout << "Current total = "<<current << endl;
-    cout << "Game total = "<<total+current << endl;
-    cout << "What would you like to do? Roll? Hold? "<< endl;
+    cout << "Turn total = " << current+amount << endl;
+    cout << "Game total = " << total+current+amount << endl;
+    cout << "What would you like to do? [roll, hold] "<< endl;
     cin >> decision;
+
+    while (decision != "hold" && decision != "roll")
+    {
+      cout << "The options are hold are roll, please try again." << endl;
+      cin >> decision;
+    }
     update(decision, amount);
   }
   else //This is a computer so we automatically determine what they do.
@@ -98,7 +104,7 @@ int Player::update(std::string decision, int amount)
   {
     current += amount;
   }
-  else if (decision == "hold")
+  else if ((decision == "hold") || (decision == "win"))
   {
     current += amount;
     total += current;
@@ -112,11 +118,4 @@ int Player::update(std::string decision, int amount)
   }
 
   return total;
-}
-
-//Returns the current total of the current player.
-int Player::getScore()
-{
-  return current;
-  //return total;
 }

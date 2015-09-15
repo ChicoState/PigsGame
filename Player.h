@@ -12,7 +12,6 @@ class Player
   public:
     Player(string new_name, bool new_cpu);
     string decision(int amount);
-    int getScore();
 
   private:
     int update(string decision, int amount);

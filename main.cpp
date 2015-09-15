@@ -90,7 +90,15 @@ int main()
 		{
 			state = players[i]->decision(diceRoll->roll());
 		}
-			cout << endl << "<<<<<<<<<<<<<<< Next Player >>>>>>>>>>>>>>>" << endl;
+
+    if (state != "win")
+    {
+		   cout << endl << "<<<<<<<<<<<<<<< Next Player >>>>>>>>>>>>>>>" << endl;
+    }
+    else
+    {
+	     cout << "<<<<<<<<<<<<<<<<<<<< End Game! >>>>>>>>>>>>>>>>>>>>" << endl;
+    }
 	} 
 
 	//Delete all the created player classes to free memory upon exit.
