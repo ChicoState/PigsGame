@@ -8,10 +8,10 @@
 
 using namespace std;
 
-class dice
+class Dice
 {
   public:
-    dice();
+    Dice();
     int roll();
 };
 

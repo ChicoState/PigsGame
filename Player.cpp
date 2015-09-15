@@ -26,6 +26,12 @@ string Player::decision(int amount)
     update(decision, amount);
     cout << "WIN with " << total << endl;
   }
+  else if(amount == 1)
+  {
+    decision = "win";
+    update(decision, amount);
+    cout << "You lost your turn, total = " << total << endl;
+  }
   else if(cpu == false)
   {
     cout << "Current total = "<<current << endl;

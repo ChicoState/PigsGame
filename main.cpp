@@ -1,40 +1,63 @@
 #include <iostream>
+#include <vector>
+#include <string>
+#include "Dice.h"
 #include "Player.h"
-#include "dice.h"
 
 using namespace std;
 
+
 int main()
-{
-  dice *firstDice = new dice;
+{ 
+  int numPlayers;
+  cout << " How many human players? " << endl;
+  cin >> numPlayers;
 
-  cout << "It is time to play Pigs Game!\n";
+  int numCpu;
+  cout << " How many cpu players? " << endl;
+  cin >> numCpu;
 
-  Player *player1 = new Player("Natalie", false);
-  Player *player2 = new Player("Chris", false);
+  vector<Player*> players; // creating vector for players
 
-  Player *array[2];
-  array[0] = player1;
-  array[1] = player2;
-  
-  string state = "roll";
+  string player_name;
+  string temp; 
 
-  for(int i = 0;  state != "win"; i = (i+1)%2)
+  for(int k=0; k<numPlayers; k++)
   {
-    state = "roll";
-    while(state == "roll")
-    {
-      state =  array[i]->decision(firstDice->roll());
-    }
+    cout << " Please enter player " <<k<<"'s name? " << endl;
+    cin >> player_name;  
+    players.push_back(new Player(player_name, false));
   }
 
-  //cout << firstDice->roll() << endl;
+  for(int j=0; j<numCpu; j++)
+  {
+    temp="Cpu" + j;
+    players.push_back(new Player (temp, true));
+  }
 
 
-  //Cleanup
-  delete firstDice;
-  delete player1;
-  delete player2;
+  Dice *diceRoll = new Dice; // create dice
+
+  string state = "roll"; 
+
+  for( int i = 0; state != "win"; i = (i+1)%(numPlayers+numCpu+1))
+  {
+    state = "roll";
+
+    while( state == "roll")
+    {
+      state = players[i]->decision(diceRoll->roll());
+
+    }
+
+  } 
+
+  for(unsigned int i = 0; i < players.size(); ++i)
+  {
+    delete players[i];
+  }
+
+  delete diceRoll;
 
   return 0;
 }

@@ -1,10 +1,10 @@
-#include "dice.h"
+#include "Dice.h"
 
-dice::dice()
+Dice::Dice()
 {
   srand (time(NULL));
 }
-int dice::roll()
+int Dice::roll()
 {
   return (rand() % MAX_ROLL_VALUE) + 1;
 }
