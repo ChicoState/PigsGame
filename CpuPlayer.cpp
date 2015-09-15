@@ -1,6 +1,6 @@
-#include "CPU.h"
+#include "CpuPlayer.h"
 
-bool CPU::determine_hold(int prev_roll, int cur_score, int roll_num)
+bool CpuPlayer::determine_hold(int prev_roll, int cur_score, int roll_num)
 {
  if (!cur_score || (prev_roll < 4 && cur_score < 6))
  {
