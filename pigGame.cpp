@@ -20,6 +20,6 @@ int main(){
 		p1.turn();
 		p1.printScore();
 		//c1.turn();
-		//cout << "Computer's total score is: " << c1.totalScore << endl;
+		//c1.printScore();
 	}	
 }
