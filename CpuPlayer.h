@@ -7,7 +7,7 @@
 //Note for later: implement a difficulty level
 class CpuPlayer: public Player
 {
-  private:
+public:
   	bool determine_hold(int prev_roll, int cur_score, int roll_num);
 };
 
