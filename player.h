@@ -12,6 +12,7 @@ Public:
 	void ResetTurnScore();
 	bool CheckForContinue();
 	void ReturnTotalScore();
+	void PlayerTurn();
 
 Private:
 	int TurnScore;

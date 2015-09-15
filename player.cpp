@@ -38,3 +38,25 @@ void Player:ReturnTotalScore()
 {
 	
 }
+
+void Player:PlayerTurn()
+{
+	int dice;
+	while()
+	{
+		dice = rand () % 6 + 1;
+		if (dice == 1)
+		{
+			ResetTurnScore();
+			return;
+		}
+		TurnScore = TurnScore + dice;
+		if(CheckForContinue())
+		{
+		}
+		else
+		{
+			return;
+		}
+	}
+}
