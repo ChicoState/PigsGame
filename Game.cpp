@@ -24,14 +24,7 @@ int Game::whosTurn()
 //gets what the current players score is
 int Game::getCurrentPlayerScore()
 {
-  if(m_current_player <= m_number_of_players)
-  {
     return m_players[m_current_player-1]->getScore();
-  }
-  if(m_current_player <= (m_number_of_cpus + m_number_of_players))
-  {
-    return m_cpus[m_current_player - m_number_of_players - 1]->getScore();
-  }
 }
 
 //changes which player is taking their turn
