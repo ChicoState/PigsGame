@@ -4,6 +4,11 @@ using namespace std;
 
 
 
+Computer::Computer()
+{
+	totalScore = 0;
+}
+
 void Computer::sumScore(int turnScore){
 	totalScore = totalScore + turnScore;
 }
@@ -20,3 +25,31 @@ bool Computer::gameOver(){
 	return false;
 }
 
+void Computer::turn(){
+
+	cout << endl << endl << endl;
+
+	d.clearTurnScore();
+	
+	int roll, runningTotal;
+	int rollCount = 0;
+
+	while(rollCount < 3 && roll != 1)
+	{
+		roll = d.roll();
+
+		rollCount++;
+
+		cout << "Computer rolled: " << roll << endl;
+
+		runningTotal = totalScore + d.addToTurnScore(0);
+
+		cout << "Computer's running total score is: " << runningTotal << endl;
+	}
+
+	sumScore(d.hold());
+
+	cout << "Computer's total score is: " << totalScore << ", and its turn is over." << endl;
+
+	cout << endl << endl << endl;
+}

@@ -29,8 +29,11 @@ void Player::turn(){
 	cin >> x;
 	while(x!="hold"){
 		if(x == "roll"){
-			d.roll();
 			roll = d.roll();
+
+			if(roll == 1)
+				break;
+
 			cout << "You rolled: " << roll << endl;
 			runningTotal = totalScore + d.addToTurnScore(0);
 			cout << "Your running total score is: " << runningTotal << endl;

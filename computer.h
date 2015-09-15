@@ -8,6 +8,8 @@ class Computer
 {
 
 	public:
+		Computer();
+		
 		void sumScore(int turnScore);
 		void printScore();
 		bool gameOver();
