@@ -6,6 +6,8 @@ using namespace std;
 
 #include "Player.h"
 #include "CpuPlayer.h"
+#include "Game.h"
+#include "Io.h"
 
 class Game
 {
@@ -13,7 +15,7 @@ class Game
     Game();
     int whosTurn();
     int getPlayersScore();
-    bool turnChange();
+    // bool turnChange();
     void addPlayers(int n);
     void addCpus(int n);
     int getCurrentPlayerScore();
@@ -21,10 +23,11 @@ class Game
     bool holdOrRoll();
     void hold();
     int turnScore(int r);
+    void start();
 
   private:
     vector<Player*> m_players;
-    vector<CpuPlayer*> m_cpus;
+    // vector<CpuPlayer*> m_cpus;
     int m_turn;
     int m_pre_roll;
     int m_current_score;
