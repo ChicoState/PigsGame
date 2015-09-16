@@ -1,3 +1,4 @@
+#### Makefile Start ####
 CC=g++
 CFLAGS=-std=c++0x -c -Wall
 LIBLOCATION=-L/usr/local/lib
@@ -15,3 +16,5 @@ $(EXECUTABLE): $(OBJECTS)
 
 .cpp.o:
 	$(CC) $(CFLAGS) $< -o $@
+##Makefile Derived from stackoverflow:
+#### Makefile End ####
