@@ -7,7 +7,7 @@ class Die
 {
     public:
         Die();
-        int roll();
+        static int roll();
 };
 
 #endif
