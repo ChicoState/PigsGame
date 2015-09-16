@@ -34,15 +34,17 @@ Io::Io()
   //###########################################################################
 }
 
-int Io::turn(Player* player, int player_num)
+int Io::turn(Player* player, int player_num, int cur_score)
 {
   unsigned char command = 'X';
 
   while ( command != 'r' && command != 'h' )
   {
-    cout << "\nPlayer number " << player_num << ":\n\t(R)oll or (H)old? ";
+    cout << "\t\t\tTotal Score: " << player->getScore() << endl;
+    cout << "\t\t\tTurn Score: " << cur_score << endl;
+    cout << player->name() << ":\n\t(R)oll or (H)old? ";
 
-    switch( COM_HOLD /*player->get_command() */) //Human player should return COM_NOT_CPU
+    switch( player->get_command(cur_score) ) //Human player should return COM_NOT_CPU
     {         // This makes the cpu look like it's entering commands as well.
       case COM_HOLD:
         cout << "h" << endl;
@@ -69,9 +71,9 @@ int Io::turn(Player* player, int player_num)
     return HOLD;
   }
 
-  Die die; // DIIIIIEEEEEEEEEEE!!!!!!!!!!!!
+  // Die die; // DIIIIIEEEEEEEEEEE!!!!!!!!!!!!
 
-  return die.roll(); // Roll the die and return its result.
+  return COM_ROLL; //die.roll(); // Roll the die and return its result.
 }
 
 void Io::winner(int player_num)

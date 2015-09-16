@@ -28,7 +28,7 @@ class Io
 
     // Returns HOLD if the player decides to hold, otherwise, returns the
     //value from the die.
-    int turn( Player*, int );
+    int turn( Player*, int player_num, int score);
 
     void winner(int); // Displays a victory message.
 
