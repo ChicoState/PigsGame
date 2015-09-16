@@ -54,7 +54,7 @@ string Player::decision(int amount)
 
     while (decision != "hold" && decision != "roll")
     {
-      cout << "The options are hold are roll, please try again." << endl;
+      cout << "The options are hold or roll, please try again." << endl;
       cin >> decision;
     }
     update(decision, amount);
