@@ -24,7 +24,7 @@ int Player::GetTurnScore() {
 }
 
 int Player::Roll() {
-	int roll = dice->GetSides();
+	int roll = dice->get_sides();
 
 	if (roll == 1) {
 		turn_score = 0;

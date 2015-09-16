@@ -11,17 +11,17 @@
 
 #include <iostream>
 
-using namespace std
+using namespace std;
 
-public
-
+class Engine {
+public:
     Engine();
     ~Engine();
 
-private
+private:
     int m_players;
     int m_dice;
     //Decide how to handle turns, Enum or multi dimensional array where each point is a turn status. 
-
+};
 
 #endif /* defined(____Engine__) */

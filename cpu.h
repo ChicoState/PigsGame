@@ -1,13 +1,14 @@
 #ifndef CPU_H
 #define CPU_H
+#include "player.h"
 #include "dice.h"
 
-class CPU : protected Player  {
+class CPU : public Player  {
 
   public:
-    CPU(int sides) {  Player(sides);  }
-    virtual int Roll() = 0;
-    virtual bool is_player() = 0; 	
+    CPU(int sides) : Player(sides) { };
+    int Roll();
+    bool is_player(); 	
   
 };
 #endif

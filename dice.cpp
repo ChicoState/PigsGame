@@ -4,7 +4,7 @@
 
 Dice::Dice(int sides) {
     num_sides = sides; // Set number of dice sides
-    srand((unsigned)time()); // Seed random number generator
+    srand((unsigned)time(NULL)); // Seed random number generator
 }
 
 int Dice::roll() {

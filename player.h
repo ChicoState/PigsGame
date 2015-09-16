@@ -13,7 +13,7 @@ class Player {
 		int GetTurnScore();
 		int Roll();
 		void EndTurn();
-	private:
+	protected:
 		int total_score,
 				turn_score;
 
