@@ -6,6 +6,8 @@ using namespace std;
 
 #include "Player.h"
 #include "CpuPlayer.h"
+#include "Game.h"
+#include "Io.h"
 
 class Game
 {
