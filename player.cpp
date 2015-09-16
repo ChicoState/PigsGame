@@ -1,9 +1,7 @@
-#include "player.h"
 #include <iostream>
 #include "player.h"
 using namespace std;
 
-Player p1;
 
 void Player::sumScore(int turnScore){
 	totalScore = totalScore + turnScore;
@@ -29,8 +27,11 @@ void Player::turn(){
 	cin >> x;
 	while(x!="hold"){
 		if(x == "roll"){
-			d.roll();
 			roll = d.roll();
+
+			if(roll == 1)
+				break;
+
 			cout << "You rolled: " << roll << endl;
 			runningTotal = totalScore + d.addToTurnScore(0);
 			cout << "Your running total score is: " << runningTotal << endl;
@@ -42,6 +43,6 @@ void Player::turn(){
 		cin >> x;
 	}
 	int score = d.hold();
-	p1.sumScore(score);
+	sumScore(score);
 	cout << "Your total score is: " << totalScore << ", your turn is now over." << endl;
 }

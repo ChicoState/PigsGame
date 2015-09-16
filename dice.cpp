@@ -1,4 +1,5 @@
 #include "dice.h"
+#include <stdlib.h>
 #include <iostream>
 
 using namespace std;
@@ -32,5 +33,5 @@ int Dice::addToTurnScore(int roll){
 
 void Dice::rolledOne(){
 	turnScore = 0;
-	cout << "You rolled a one! Score for turn lost, your turn is over" << endl;
+	cout << "A 'one' was rolled! Score for turn lost" << endl;
 }
