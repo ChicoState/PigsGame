@@ -23,6 +23,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <sstream>
 #include "Dice.h"
 #include "Player.h"
 
@@ -63,10 +64,11 @@ int main()
 
   //Each computer player is added to the players vector with a auto 
   //created name that is based on the current computer player number.
-  for(int j = 0; j < numCpu; j++)
+  for(int j = 1; j <= numCpu; j++)
   {
-    cpuName = ("Cpu" + j);
-    players.push_back(new Player (cpuName, true));
+    stringstream ss;
+    ss << "Cpu" << j;
+    players.push_back(new Player (ss.str(), true));
   }
 
   //Create the random dice that will provide a random roll.

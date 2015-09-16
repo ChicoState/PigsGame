@@ -14,7 +14,7 @@ class Player
     string decision(int amount);
 
   private:
-    int update(string decision, int amount);
+    void update(string decision, int amount);
     string name;
     int total;
     int current;

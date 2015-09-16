@@ -94,7 +94,7 @@ string Player::decision(int amount)
 //updated are based off the decision string, and the current
 //roll amount which are the inputs of this function. The output
 //of this function tells what the current total for the player is.
-int Player::update(std::string decision, int amount)
+void Player::update(std::string decision, int amount)
 {
   if (decision == "reset")
   {
@@ -110,12 +110,4 @@ int Player::update(std::string decision, int amount)
     total += current;
     current = 0;
   }
-  else if (decision == "win")
-  {
-    current += amount;
-    total += current;
-    current = 0;
-  }
-
-  return total;
 }
