@@ -8,8 +8,8 @@
 class CpuPlayer: public Player
 {
 public:
+    CpuPlayer();
   	bool determine_hold(int prev_roll, int cur_score, int roll_num);
-    bool turn();
 };
 
 #endif

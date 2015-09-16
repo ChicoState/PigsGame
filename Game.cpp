@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "Player.h"
 #include "CpuPlayer.h"
+#include "Io.h"
 using namespace std;
 
 Game::Game()
@@ -64,7 +65,8 @@ bool Game::holdOrRoll()
   {
     return false;
   }
-  return m_cpus[m_current_player - m_number_of_players - 1]->determine_hold(m_pre_roll,m_current_score,m_turn);
+  return true;
+  // return m_cpus[m_current_player - m_number_of_players - 1]->determine_hold(m_pre_roll,m_current_score,m_turn);
 }
 
 //takes an number for what the dice was rolled. If number is 1, then player looses their turn score. Otherwise roll is added to total
@@ -72,7 +74,7 @@ int Game::turnScore(int r)
 {
   if(r == 1)
   {
-    turnChange();
+    // turnChange();
     m_pre_roll = 0;
     return m_current_score = 0;
   }
@@ -83,5 +85,5 @@ int Game::turnScore(int r)
 
 void Game::start()
 {
-
+    Io io;
 }

@@ -9,24 +9,22 @@
 #ifndef _Io_H
 #define _Io_H
 
-#include<cstdlib>
-
-using std::cout;
-using std::cin;
-using std::endl;
+#include <cstdlib>
+#include "Player.h"
+#include "Die.h"
 
 const int  HOLD = -1;
 
-enum Commands 
+enum Commands
 {
   COM_NOT_CPU,
   COM_HOLD,
-  COM_ROLL 
+  COM_ROLL
 };
 
 class Io
 {
-  public: 
+  public:
 
     // Returns HOLD if the player decides to hold, otherwise, returns the
     //value from the die.
@@ -38,8 +36,8 @@ class Io
   private:
     Io(); //  Constructor can only be called by the game class.  Prevents other
           // classes from creating their own instance of this class.
-          
-    static int io_num; //  To prevent multiple instances.
-}
+
+    // static int io_num = 0; //  To prevent multiple instances.
+};
 
 #endif

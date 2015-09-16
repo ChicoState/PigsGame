@@ -13,7 +13,7 @@ class Game
     Game();
     int whosTurn();
     int getPlayersScore();
-    bool turnChange();
+    // bool turnChange();
     void addPlayers(int n);
     void addCpus(int n);
     int getCurrentPlayerScore();
