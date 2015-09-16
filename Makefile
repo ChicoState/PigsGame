@@ -16,5 +16,8 @@ $(EXECUTABLE): $(OBJECTS)
 
 .cpp.o:
 	$(CC) $(CFLAGS) $< -o $@
+
+clean:
+	rm -f *.o PigsGame
 ##Makefile Derived from stackoverflow:
 #### Makefile End ####
